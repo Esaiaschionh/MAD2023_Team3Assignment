@@ -1,0 +1,71 @@
+<!-- activity_goal_tracker.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Goal Name Input -->
+    <EditText
+        android:id="@+id/editTextGoalName"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Goal Name"
+        android:padding="16dp" />
+
+    <!-- Goal Description Input -->
+    <EditText
+        android:id="@+id/editTextGoalDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextGoalName"
+        android:hint="Enter Goal Description"
+        android:padding="16dp" />
+
+    <!-- Goal Due Date Input -->
+    <DatePicker
+        android:id="@+id/datePickerGoalDueDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextGoalDescription"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp" />
+
+    <!-- Save Goal Button -->
+    <Button
+        android:id="@+id/buttonSaveGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePickerGoalDueDate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Save Goal" />
+
+    <!-- Display Goals Button -->
+    <Button
+        android:id="@+id/buttonDisplayGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSaveGoal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Display Goals" />
+
+    <ImageButton
+        android:id="@+id/menu2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="679dp"
+        android:src="@drawable/baseline_menu_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+</RelativeLayout>

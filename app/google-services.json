@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1038028408351",
+    "project_id": "logintest-e5432",
+    "storage_bucket": "logintest-e5432.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038028408351:android:79f4766bc0b8f783c3b72a",
+        "android_client_info": {
+          "package_name": "sg.edu.np.mad.logintest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038028408351-70d50q8t0utabklmh4p6jkil938kbaa4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq9joKc8PwIkUFtw2TYehRtD_QkNW2tHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038028408351-70d50q8t0utabklmh4p6jkil938kbaa4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
