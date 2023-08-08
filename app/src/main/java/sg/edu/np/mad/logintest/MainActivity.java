@@ -13,11 +13,15 @@ import android.widget.PopupMenu;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private Button project_Management_button;
+    private Button task_planner_button;
     private Button study_SAA_button;
     private Button task_Time_Tracking_button;
     private Button new_Notes_button;
-    private Button Goal_Tracker_button;
+    private Button goal_Tracker_button;
+
+    private Button tracking_button;
+
+    private Button stats_button;
     ImageButton menu2Btn;
 
     @Override
@@ -27,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
         menu2Btn = findViewById(R.id.menu2_btn);
 
-        project_Management_button = (Button) findViewById(R.id.project_Management_btn);
-        project_Management_button.setOnClickListener(new View.OnClickListener() {
+        task_planner_button = (Button) findViewById(R.id.task_planner_btn);
+        task_planner_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openTaskPlannerActivity();
             }
         });
-        Goal_Tracker_button= (Button) findViewById(R.id.goal_Tracker_btn);
-        Goal_Tracker_button.setOnClickListener(new View.OnClickListener() {
+        goal_Tracker_button= (Button) findViewById(R.id.goal_Tracker_btn);
+        goal_Tracker_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openGoalTrackerActivity();
@@ -66,6 +70,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tracking_button = (Button) findViewById(R.id.tracking_btn);
+        tracking_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTrackingActivity();
+            }
+        });
+
+        stats_button = (Button) findViewById(R.id.stats_btn);
+        stats_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStatsActivity();
+            }
+        });
+
         menu2Btn.setOnClickListener((v)->showMenu() );
     }
     public void openTaskPlannerActivity(){
@@ -89,6 +109,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openGoalTrackerActivity(){
         Intent intent = new Intent(this, GoalTrackerActivity.class);
+        startActivity(intent);
+    }
+
+    public void openTrackingActivity(){
+        Intent intent = new Intent(this, Tracking.class);
+        startActivity(intent);
+    }
+
+    public void openStatsActivity(){
+        Intent intent = new Intent(this, Stats.class);
         startActivity(intent);
     }
 

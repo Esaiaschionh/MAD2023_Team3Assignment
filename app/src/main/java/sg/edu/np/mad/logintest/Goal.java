@@ -14,7 +14,6 @@ public class Goal {
         this.progress = progress;
     }
 
-    // Add the ID field to the constructor and getter/setter methods
     public Goal(long id, String name, String description, long dueDateMillis, int progress) {
         this.id = id;
         this.name = name;

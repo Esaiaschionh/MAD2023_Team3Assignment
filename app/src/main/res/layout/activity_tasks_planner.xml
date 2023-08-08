@@ -32,4 +32,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
+    <TextView
+        android:id="@+id/editTextText"
+        android:layout_width="343dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:text="This feature is not available yet."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

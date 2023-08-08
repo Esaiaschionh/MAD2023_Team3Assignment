@@ -76,5 +76,41 @@ public class GoalDatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return goalList;
     }
+    public void deleteGoal(long goalId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_GOALS, COLUMN_ID + " = ?", new String[]{String.valueOf(goalId)});
+        db.close();
+    }
+    public void updateGoal(Goal goal) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, goal.getName());
+        values.put(COLUMN_DESCRIPTION, goal.getDescription());
+        values.put(COLUMN_DUE_DATE, goal.getDueDateMillis());
+        values.put(COLUMN_PROGRESS, goal.getProgress());
+        db.update(TABLE_GOALS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(goal.getId())});
+        db.close();
+    }
+
+    public Goal getGoalById(long goalId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(
+                TABLE_GOALS, null, COLUMN_ID + " = ?",
+                new String[]{String.valueOf(goalId)}, null, null, null
+        );
+
+        Goal goal = null;
+        if (cursor != null && cursor.moveToFirst()) {
+            String name = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
+            String description = cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION));
+            long dueDateMillis = cursor.getLong(cursor.getColumnIndex(COLUMN_DUE_DATE));
+            int progress = cursor.getInt(cursor.getColumnIndex(COLUMN_PROGRESS));
+            goal = new Goal(goalId, name, description, dueDateMillis, progress);
+            cursor.close();
+        }
+
+        db.close();
+        return goal;
+    }
 
 }
